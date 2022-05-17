@@ -1,0 +1,158 @@
+@mixin caption-mobo() {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: $brand-red;
+  padding-bottom: 3px;
+  @include mobile352 {
+    font-size: 0.6rem;
+  }
+  @include laptop {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    padding-bottom: 5px;
+  }
+}
+
+@mixin section-title-mobo() {
+  font-size: 1.4rem;
+  font-weight: 700;
+  position: relative;
+  letter-spacing: 0.1px;
+  margin-bottom: 1em;
+  @include mobile352 {
+    font-size: 1.2rem;
+  }
+  @include laptop {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+@mixin underline-symbol-mobo() {
+  content: url(/media/underline-symbol-all.svg);
+  position: absolute;
+  bottom: -15px;
+  @include mobile352 {
+    bottom: -13px;
+  }
+}
+
+@mixin underline-symbol() {
+  content: url(/media/underline-symbol-big.svg);
+  position: absolute;
+  bottom: -20px;
+  font-size: 0.5rem;
+  width: 0.1rem;
+}
+
+@mixin section-para-mobo() {
+  font-size: 0.9rem;
+  line-height: 23px;
+  letter-spacing: 0.5px;
+  @include mobile352 {
+    font-size: 0.8rem;
+  }
+  @include laptop {
+    font-size: 0.9rem;
+    line-height: 25px;
+  }
+}
+
+@mixin btn-blue-mb() {
+  background-color: $footer-gray;
+  display: inline;
+  border: none;
+  border-radius: 20px;
+  padding: 7px 15px;
+  font-size: 1rem;
+  color: $brand-blue;
+  cursor: pointer;
+  box-shadow: 0px 0px 7px 0px rgba(75, 75, 75, 0.75);
+  @include mobile352 {
+    padding: 5.5px 13px;
+    font-size: 0.8rem;
+  }
+}
+
+@mixin footerTitle{
+  font-size: 0.9rem;
+  color: white;
+  @include desktopLarge{
+    font-size: 1rem;
+  }
+}
+
+@mixin footerSub{
+  font-size: 0.7rem;
+  color: $footer-gray;
+  @include desktopLarge{
+    font-size: 0.8rem;
+  }
+
+}
+@mixin mobile352 {
+  @media (max-width: #{$smallMobile}) {
+    @content;
+  }
+}
+
+@mixin mobile318 {
+  @media (max-width: #{$verysmallmobile}) {
+    @content;
+  }
+}
+
+@mixin mobile420 {
+  @media (min-width: #{$largescreenmobile}) {
+    @content;
+  }
+}
+
+@mixin mobile522 {
+  @media (min-width: #{$verylargescreenmobile}) and (max-width:#{$smalltablet}) {
+    @content;
+  }
+}
+
+@mixin mobile600 {
+  @media (min-width: #{$smalltablet}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width:#{$laptop}) {
+    @content;
+  }
+}
+
+@mixin laptopLarge{
+  @media (min-width:#{$laptopLarge})
+  {
+    @content;
+  }
+}
+
+
+@mixin desktopSmall{
+  @media (min-width:#{$desktopSmall})
+  {
+    @content;
+  }
+}
+
+@mixin desktop{
+  @media (min-width:#{$desktop})
+  {
+    @content;
+  }
+}
+
+@mixin desktopLarge{
+  @media (min-width:#{$dekstopLarge})
+  {
+    @content;
+  }
+}

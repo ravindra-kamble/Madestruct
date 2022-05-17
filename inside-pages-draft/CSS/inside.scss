@@ -1,0 +1,631 @@
+@import 'mixin';
+@import 'var';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+}
+
+nav {
+  position: absolute;
+  @include laptop {
+    position: absolute;
+  }
+}
+
+// mobile nav section start from here
+.toggle-btn {
+  position: fixed;
+  padding-top: 1.5em;
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
+  @include laptop {
+    display: none;
+  }
+}
+
+.toggle-btn-scroll {
+  transform: translateX(-100%);
+}
+
+.mb-main-logo {
+  position: fixed;
+  width: auto;
+  height: auto;
+  z-index: 3;
+  @include laptop {
+    display: none;
+  }
+
+  .picture-logo-mobile {
+    margin-top: 1rem;
+    position: fixed;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 0.3rem;
+    transition: all 0.5s ease-in-out;
+
+    @include laptop {
+      display: none;
+    }
+  }
+}
+
+// scrolling effect for mobile nav
+
+.scrolling_active {
+  width: 100% !important;
+  text-align: center !important;
+  margin-top: 0 !important;
+  padding-top: 5px !important;
+}
+
+.scrolling_active_color {
+  background-color: #fff;
+  box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
+}
+
+.scrolling_active_logo {
+  width: 30% !important;
+  @include mobile600 {
+    width: 22% !important;
+  }
+}
+// mobile nav section ends here
+
+// desktop nav setcion start from here
+
+.nav-main {
+  display: none;
+  @include laptop {
+    width: 100vw;
+    height: 80px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+}
+
+.nav-container {
+  position: relative;
+  width: 80vw;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include laptopLarge {
+    width: 76vw;
+  }
+
+  @include desktopLarge {
+    width: 70vw;
+  }
+  .logo {
+    position: relative;
+    z-index: 5;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .navbar {
+    width: 75%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+
+    @include laptopLarge {
+      width: 64%;
+    }
+
+    .navitem {
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #111;
+      padding: 0 0.8em;
+      transition: all 0.25s ease-in-out;
+
+      @include desktopLarge {
+        font-size: 1rem;
+        padding: 0 1em;
+      }
+    }
+
+    .navitem:hover,
+    .navitem:active {
+      color: $brand-red;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      width: 80%;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      @include laptopLarge {
+        width: 70%;
+      }
+    }
+    .nav-cta {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      .navitem-cta {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        background-color: $brand-blue;
+        padding: 7px 12px;
+        border-radius: 20px;
+      }
+      .navitem-cta:hover,
+      .navitem-cta:active {
+        background-color: $brand-red;
+      }
+    }
+  }
+}
+.navbar_scroll_active {
+  background-color: #fff;
+  box-shadow: 0 20px 2rem rgba(0, 0, 0, 0.1);
+}
+
+// mobile nav below
+
+
+.mb-nav {
+    display: none;
+    position: fixed;
+    height: 103vh;
+    width: 100vw;
+    background-color: white;
+    z-index: 5;
+  
+    .collapse-section {
+      display: block;
+      //  background: url(/media/nav-panel.svg);
+      height: 80vh;
+      max-height: 600px;
+      max-width: 100%;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      //  padding: 3rem 0 3rem 3rem;
+  
+      .panel-svg {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        z-index: 5;
+  
+        @include mobile420 {
+          top: -50px;
+        }
+        @include mobile522 {
+          top: -200px;
+        }
+  
+        @include mobile600 {
+          top: -150px;
+        }
+      }
+  
+      .panel-svg1 {
+        position: absolute;
+        width: 100vw;
+        height: auto;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        @include mobile420 {
+          top: -50px;
+        }
+        @include mobile522 {
+          top: -200px;
+        }
+  
+        @include mobile600 {
+          top: -150px;
+        }
+      }
+  
+      .logo-mb {
+        padding: 3rem 0 0 3rem;
+        position: relative;
+        z-index: 5;
+        .picture-logo-mb img {
+          width: 200px;
+        }
+        @include mobile600 {
+          padding: 5rem 0 0 5rem;
+        }
+      }
+    }
+  }
+  .mb-navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    position: relative;
+    padding-left: 3rem;
+    z-index: 5;
+  
+    @include mobile600 {
+      padding-left: 5rem;
+    }
+  }
+  .mb-navbar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0;
+    li {
+      padding: 0.7rem 0;
+      @include mobile352 {
+        padding: 0.5rem 0;
+      }
+      @include mobile318 {
+        padding: 0.2.5rem 0;
+      }  
+  
+      .navitem-mb {
+        text-decoration: none;
+        font-size: 1.1rem;
+        color: black;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.23s linear;
+        @include mobile352 {
+          font-size: 1rem;
+        }
+        
+      }
+      .navitem-mb:active{
+        color:#fff;
+      }
+  
+      .navitem-mb:hover{
+        color:#fff;
+      }
+    }
+  }
+  
+  .nav-cta-mb {
+    padding: 1.1rem 3rem 0 0;
+    display: flex;
+    align-items: flex-start;
+    @include mobile600 {
+      padding: 1.1rem 5rem 0 0;
+    }
+    //    justify-content: flex-end;
+    .navitem-cta-mb {
+      text-decoration: none;
+      font-size: 1rem;
+      color: white;
+      font-weight: 400;
+      background-color: $brand-red;
+      padding: 7px 15px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 10px 0px rgba(75, 75, 75, 0.75);
+      transition: all 0.23s linear;
+      @include mobile352 {
+        font-size: 1rem;
+        padding: 5px 10px;
+      }
+      @include mobile318 {
+        padding: 3px 7px;
+      }
+    }
+    .navitem-cta-mb:active{
+      background-color: #111;
+    }
+  
+    .navitem-cta-mb:hover{
+      background-color: #111;
+    }
+  }
+  
+  
+  
+  .mb-nav-social {
+    position: relative;
+    z-index: 5;
+    margin-top: 2rem;
+    padding-left: 3rem;
+    @include mobile352 {
+      margin-top: 0.5rem;
+    }
+    @include mobile318 {
+      margin-top: 0.5rem;
+    }
+    @include mobile600 {
+      padding-left: 5rem;
+    }
+    a {
+      text-decoration: none;
+    }
+    .social-icon {
+      padding-right: 1.5rem;
+      position: relative;
+    }
+    svg {
+      height: 30px;
+      width: 30px;
+      @include mobile352 {
+        height: 25px;
+        width: 25px;
+      }
+      
+    }
+  }
+  
+  .close-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100px;
+  
+    @include mobile420 {
+      bottom: 70px;
+    }
+  }
+  
+  .show {
+    display: block !important;
+  }
+  
+  .hide {
+    display: none !important;
+  }
+  
+
+// Nav section ends here
+
+// footer start from here
+// footer section from here
+footer {
+  position: relative;
+  background-color: #343a40;
+  color: white;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+
+  .footer-main {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: auto auto;
+    text-align: center;
+
+    @include laptop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include laptopLarge {
+      width: 76%;
+    }
+    @include desktopLarge {
+      width: 70%;
+    }
+
+    .footer-about {
+      @include laptop {
+        width: 30%;
+        text-align: start;
+      }
+      .footer-about-hide {
+        display: none;
+        @include laptop {
+          display: block;
+        }
+      }
+      h2 {
+        font-size: 1.1rem;
+        color: white;
+        @include laptop {
+          @include footerTitle;
+        }
+      }
+      p {
+        font-size: 0.8rem;
+        color: $footer-gray;
+        @include laptop {
+          @include footerSub;
+        }
+      }
+      .footer-social {
+        position: relative;
+
+        .hvr-icon-grow {
+          padding: 0 0.3rem;
+          color: $footer-gray;
+        }
+      }
+
+      .footer-logo {
+        margin: 1rem 0;
+      }
+    }
+
+    .footer-contact {
+      position: relative;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      @include laptop {
+        // width:20%;
+        text-align: start;
+        margin-top: 0;
+      }
+
+      h2 {
+        display: none;
+        @include laptop {
+          display: block;
+          @include footerTitle;
+        }
+      }
+      a {
+        text-decoration: none;
+        display: block;
+        margin: 0.3rem 0;
+        font-size: 0.9rem;
+        color: $footer-gray;
+        @include laptop {
+          @include footerSub;
+        }
+      }
+    }
+    .footer-sector {
+      display: none;
+
+      @include laptop {
+        display: block;
+        // width:24%;
+        text-align: start;
+        h2 {
+          @include footerTitle;
+        }
+        ul {
+          list-style: none;
+          width: 100%;
+          padding-left: 0;
+          li a {
+            display: inline;
+            text-decoration: none;
+            @include footerSub;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .footer-link {
+      display: none;
+      @include laptop {
+        display: block;
+        // width:20%;
+        text-align: start;
+        h2 {
+          @include footerTitle;
+        }
+        ul {
+          list-style: none;
+          width: 100%;
+          padding-left: 0;
+          li a {
+            display: inline;
+            text-decoration: none;
+            @include footerSub;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer-sub {
+  padding: 0.5rem;
+  background-color: #242629;
+  position: relative;
+  z-index: 2;
+  @include laptop {
+    padding: 0.5rem;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    @include laptop {
+      width: 80%;
+      margin: auto auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    li {
+      padding-top: 0.3rem;
+      font-size: 0.8rem;
+      color: $footer-gray;
+      padding: 0 2rem;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
+
+.footer-watermark1 {
+  position: absolute;
+  top: 0;
+  svg {
+    width: 100px;
+
+    @include mobile600 {
+      width: 150px;
+    }
+    @include laptop {
+      width: 200px;
+    }
+  }
+}
+
+.footer-watermark2 {
+  display: none;
+  @include laptop {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    svg {
+      width: 250px;
+      height: 250px;
+    }
+  }
+}
